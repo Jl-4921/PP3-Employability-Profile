@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Employability Profile Portfolio</title>
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    /* Global Styles */
+    :root {
+      --blue: #4fa3ff;
+      --light-blue: #cfe8ff;
+      --white: #ffffff;
+      --text-dark: #0d1b2a;
+      --max-width: 1200px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to bottom right, var(--blue), var(--white)),
+                  url('assets/corporate-bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+    .overlay {
+      background: rgba(255,255,255,0.6);
+      min-height: 100vh;
+      padding: 2rem;
+    }
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      position: relative;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      color: var(--text-dark);
+    }
+    header p {
+      font-size: 1rem;
+      color: var(--text-dark);
+      margin-top: 0.5rem;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+    nav a {
+      text-decoration: none;
+      font-weight: 600;
+      color: var(--blue);
+      transition: color 0.3s;
+    }
+    nav a:hover { color: var(--text-dark); }
+    section { margin-bottom: 3rem; }
+    section h2 {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+      color: var(--text-dark);
+      border-bottom: 2px solid var(--blue);
+      display: inline-block;
+      padding-bottom: 0.25rem;
+    }
+    /* Carousel Controls */
+    .carousel-wrapper {
+      position: relative;
+    }
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.8);
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 1.5rem;
+      color: var(--blue);
+      cursor: pointer;
+      z-index: 1;
+    }
+    .arrow.prev { left: 0; }
+    .arrow.next { right: 0; }
+    /* Activities Carousel */
+    .activities-carousel {
+      display: flex;
+      gap: 1rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding: 1rem 2rem;
+    }
+    .activities-carousel::-webkit-scrollbar { display: none; }
+    .activity-item {
+      flex: 0 0 60%;
+      scroll-snap-align: center;
+      position: relative;
+      transform: scale(0.8);
+      transition: transform 0.3s;
+    }
+    .activity-item.active {
+      transform: scale(1);
+    }
+    .glass-card {
+      background: var(--white);
+      border: 1px solid var(--light-blue);
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+    .activity-item h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+    .image-placeholder {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: var(--light-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-dark);
+      margin-bottom: 1rem;
+      border-radius: 8px;
+    }
+    .activity-item p { font-size: 0.95rem; margin-bottom: 0.5rem; }
+    /* STAR Model */
+    .experience .glass-card {
+      background: var(--white);
+      color: var(--text-dark);
+    }
+    .experience h3 { color: var(--blue); margin-bottom: 0.75rem; }
+    .star-model p { margin-bottom: 0.75rem; }
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--text-dark);
+      margin-top: 4rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <div class="container">
+      <header>
+        <h1>Employability Profile</h1>
+        <p>Portfolio of Activities and Reflections</p>
+        <p>Created by Jindong Liu</p>
+      </header>
+      <nav>
+        <a href="#pre-reflection">Pre Reflection</a>
+        <a href="#activities">Activities Picture Log</a>
+        <a href="#post-reflection">Post Reflection</a>
+      </nav>
+
+      <!-- Part 1: Pre Reflection -->
+      <section id="pre-reflection">
+        <h2>Pre Reflection</h2>
+        <div class="glass-card">
+          <p>At the start of Semester 1, I considered my personal strengths to be solid analytical reasoning and technical proficiency in data science, but I recognised gaps in my communication, networking, and professional presentation skills. I felt confident solving mathematical problems and developing models, yet I was hesitant in networking situations, uncertain about how to introduce myself, and lacked a clear strategy for tailoring my resume or cover letter to specific roles. My goal was to become a more well-rounded candidate: equally proficient in conveying my technical expertise and in building relationships with industry professionals. To address these development areas, I engaged in a series of university-led professional workshops—starting with the English pronunciation and fluency session to improve clarity in speech, followed by resume and cover letter clinics to refine my application materials. I also participated in networking and strengths-identification workshops to practice introductions, articulate my unique attributes, and learn how to market them effectively. Each activity challenged me to step outside my comfort zone, provided structured guidance on best practices, and offered immediate feedback. By mid-semester, I noticed a shift: I felt more confident initiating conversations, my written materials gained polish, and I began to view professional development as an essential complement to my technical skill set.</p>
+        </div>
+      </section>
+
+
+      <!-- Part 2: Activities Log as Interactive Carousel -->
+      <section id="activities">
+        <h2>Activities Picture Log</h2>
+        <div class="carousel-wrapper">
+          <button class="arrow prev" onclick="scrollCarousel(-1)">&#8249;</button>
+          <div class="activities-carousel" id="carousel">
+            <!-- Last cloned for wrap -->
+            <!-- Activity 10 -->
+            <div class="activity-item glass-card active">
+              <h3>PIE Series - Don't Lose Control of Your Interview</h3>
+              <div class="image-placeholder" style="display: flex; gap: 8px;">
+                <img src="assets/pie-series-intro.png" alt="PIE Series Intro Slide" style="width: 49%; height: auto; border-radius: 8px;">
+                <img src="assets/pie-series-practice.png" alt="Interview Edge Cases Practice" style="width: 49%; height: auto; border-radius: 8px;">
+              </div>
+              <p><strong>Date:</strong> 15 May 2025</p>
+              <p><strong>Time:</strong> 4:00 pm - 5:30 pm (Adelaide Time)</p>
+              <p><strong>Venue:</strong> Helen Mayo South Building, SG20, Hone &amp; Sterling Teaching Room</p>
+              <p><strong>Summary:</strong> A practical workshop led by Shaun Gunawardane on anticipating and managing unexpected interview challenges—brain fog, disengaged interviewers, surprise salary questions, and miscommunications—through real-world examples and hands-on practice.</p>
+            </div>
+            <!-- Activity 1 -->
+            <div class="activity-item glass-card active">
+              <h3>International Careers Development Program: S1 English Pronunciation and Fluency Workshop (Online)</h3>
+              <div class="image-placeholder">
+                <img src="assets/pronunciation-workshop..png" alt="Workshop Image" style="width: 49%; height: auto; border-radius: 8px;">
+                <img src="assets/pronunciation-workshop.1.png" alt="Workshop Image" style="width: 49%; height: auto; border-radius: 8px;">
+              </div>
+              <p><strong>Date:</strong> 15 May 2025</p>
+              <p><strong>Time:</strong> 4:00 pm - 5:45 pm (Adelaide Time)</p>
+              <p><strong>Venue:</strong> Online (Zoom)</p>
+              <p><strong>Summary:</strong> Interactive session focusing on pronunciation, fluency, small talk strategies, and building confidence for English communication in professional settings.</p>
+            </div>
+            <!-- Activity 2 -->
+            <div class="activity-item glass-card active">
+              <h3>AI for Public Good Webinar</h3>
+              <div class="image-placeholder">
+                <img src="assets/ai-public-good-webinar.png" alt="Webinar Image" style="width: 100%; height: auto; border-radius: 8px;">
+              </div>
+              <p><strong>Date:</strong> 9 May 2025</p>
+              <p><strong>Time:</strong> 10:00 am - 12:00 pm (Adelaide Time)</p>
+              <p><strong>Venue:</strong> Online (Zoom)</p>
+              <p><strong>Summary:</strong> Explored applications of AI for public good with industry experts, including use cases in government services, financial wellbeing, and healthcare sectors, and engaged in a live Q&amp;A session.</p>
+            </div>
+            <!-- Activity 3 -->
+            <div class="activity-item glass-card active">
+              <h3>Resume and Cover Letter Session</h3>
+              <div class="image-placeholder" style="display: flex; gap: 8px;">
+                <img src="assets/resume-session-slide1.png" alt="Session Slide 1" style="width: 49%; height: auto; border-radius: 8px;">
+                <img src="assets/resume-session-workshop.png" alt="Workshop Activity" style="width: 49%; height: auto; border-radius: 8px;">
+              </div>
+              <p><strong>Date:</strong> 22 May 2025</p>
+              <p><strong>Time:</strong> 1:10 pm - 2:00 pm (Adelaide Time)</p>
+              <p><strong>Venue:</strong> EM105 CAT Suite, Level 1, Engineering &amp; Maths, North Terrace</p>
+              <p><strong>Summary:</strong> Interactive careers workshop led by University Careers Service staff, covering step-by-step guidance on writing and formatting resumes and cover letters. Participants drafted sections in real-time, received live feedback, and discussed strategies to highlight their skills effectively for employer review.</p>
+            </div>
+            <!-- Activity 4 -->
+            <div class="activity-item glass-card active">
+              <h3>International Careers Development Program: S1 Networking Skills Workshop</h3>
+              <div class="image-placeholder" style="display: flex; gap: 8px;">
+                <img src="assets/networking-workshop-intro.png" alt="Workshop Introduction Slide" style="width: 49%; height: auto; border-radius: 8px;">
+                <img src="assets/networking-workshop-practice.png" alt="Interactive Networking Practice" style="width: 49%; height: auto; border-radius: 8px;">
+              </div>
+              <p><strong>Date:</strong> 20 May 2025</p>
+              <p><strong>Time:</strong> 4:00 pm - 5:00 pm (Adelaide Time)</p>
+              <p><strong>Venue:</strong> Union House, Level 6, Union, North Terrace</p>
+              <p><strong>Summary:</strong> Interactive session on building professional networks: participants learned to introduce themselves confidently, make small talk, practice networking through role-plays, ask insightful questions, and plan effective follow-up strategies with industry contacts.</p>
+            </div>
+            <!-- Activity 5 -->
+            <div class="activity-item glass-card active">
+              <h3>NESS Workshop #1: The Value of Strengths</h3>
+              <div class="image-placeholder" style="display: flex; gap: 8px;">
+                <img src="assets/ness-strengths-slide.png" alt="Workshop Strengths Slide" style="width: 49%; height: auto; border-radius: 8px;">
+                <img src="assets/ness-group-activity.png" alt="Group Strengths Activity" style="width: 49%; height: auto; border-radius: 8px;">
+              </div>
+              <p><strong>Date:</strong> 28 May 2025</p>
+              <p><strong>Time:</strong> 11:00 am - 1:00 pm (Adelaide Time)</p>
+              <p><strong>Venue:</strong> Conference Room 715, Ingkarni Wardli, North Terrace</p>
+              <p><strong>Summary:</strong> NESS workshop focused on identifying personal strengths, interests, and values; marketing those strengths in applications and interviews; and exploring the role of volunteering in enhancing well-being and employability.</p>
+            </div>
+            <!-- Activity 6 -->
+            <div class="activity-item glass-card active">
+              <h3>Ozwater'25 Tertiary Student Experience Day</h3>
+              <div class="image-placeholder" style="display: flex; gap: 8px;">
+                <img src="assets/ozwater-banner.png" alt="Ozwater'25 Banner" style="width: 49%; height: auto; border-radius: 8px;">
+                <img src="assets/ozwater-exhibit-hall.png" alt="Exhibition Hall Tour" style="width: 49%; height: auto; border-radius: 8px;">
+              </div>
+              <p><strong>Date:</strong> 20 May 2025</p>
+              <p><strong>Time:</strong> 9:30 am - 1:00 pm (Adelaide Time)</p>
+              <p><strong>Venue:</strong> Fulton Hogan Education Hub - Foyer F, Adelaide Convention Centre</p>
+              <p><strong>Summary:</strong> A free full-day event offering panels with young water professionals, Q&amp;As with industry experts, a guided tour of over 200 exhibitors in the water sector, networking opportunities, buffet lunch, and a chance to win a 1-year AWA student membership.</p>
+            </div>
+            <!-- Activity 7 -->
+            <div class="activity-item glass-card active">
+              <h3>Information Session and Q&A on Job Opportunities and Visa Options in Canada</h3>
+              <div class="image-placeholder" style="display: flex; gap: 8px;">
+                <img src="assets/canada-session-info.png" alt="Session Information Slide" style="width: 49%; height: auto; border-radius: 8px;">
+                <img src="assets/canada-session-qa.png" alt="Q&A with Migration Manager" style="width: 49%; height: auto; border-radius: 8px;">
+              </div>
+              <p><strong>Date:</strong> 28 May 2025</p>
+              <p><strong>Time:</strong> 5:30 pm - 6:30 pm (Adelaide Time)</p>
+              <p><strong>Venue:</strong> G04 Lecture Theatre, Ground Floor, Napier, North Terrace</p>
+              <p><strong>Summary:</strong> In-person session hosted by the High Commission of Canada covering Canada's job market insights, in-demand sectors, migration pathways and visa options, followed by a live Q&amp;A with the Migration Program Manager.</p>
+            </div>
+            <!-- Activity 8 -->
+            <div class="activity-item glass-card active">
+              <h3>Gaining Practical Experience and Professional Development Workshop</h3>
+              <div class="image-placeholder" style="display: flex; gap: 8px;">
+                <img src="assets/workexp-strategy.png" alt="Work Experience Strategy Slide" style="width: 49%; height: auto; border-radius: 8px;">
+                <img src="assets/workexp-socialmedia.png" alt="Social Media Search Strategies" style="width: 49%; height: auto; border-radius: 8px;">
+              </div>
+              <p><strong>Date:</strong> 11 June 2025</p>
+              <p><strong>Time:</strong> 2:10 pm - 3:00 pm (Adelaide Time)</p>
+              <p><strong>Venue:</strong> 2040 Teaching Room, Level 2, Barr Smith South, North Terrace</p>
+              <p><strong>Summary:</strong> Workshop on sourcing and securing work experience: how employers view placements, where to find advertised and unadvertised roles, cold-calling techniques, and leveraging social media platforms to connect with potential host organisations.</p>
+            </div>
+            <!-- Activity 9 -->
+            <div class="activity-item glass-card active">
+              <h3>National Reconciliation Week 2025</h3>
+              <div class="image-placeholder" style="display: flex; gap: 8px;">
+                <img src="assets/reconciliation-banner.png" alt="Reconciliation Week Banner" style="width: 49%; height: auto; border-radius: 8px;">
+                <img src="assets/reconciliation-yarning.png" alt="Yarning Session with First Nations Speaker" style="width: 49%; height: auto; border-radius: 8px;">
+              </div>
+              <p><strong>Date:</strong> 30 May 2025</p>
+              <p><strong>Time:</strong> 3:00 pm - 4:30 pm (Adelaide Time)</p>
+              <p><strong>Venue:</strong> UniBar Adelaide, Union House, North Terrace</p>
+              <p><strong>Summary:</strong> A campus event marking National Reconciliation Week with Welcome to Country by Jack Buckskin, Didgeridoo performance, Kaurna Song Book music, a yarning circle on First Nations Voice to Parliament, and a free sausage sizzle—designed to foster understanding of shared histories and guide collective action toward reconciliation.</p>
+            </div>
+            <!-- Activity 10 -->
+            <div class="activity-item glass-card active">
+              <h3>PIE Series - Don't Lose Control of Your Interview</h3>
+              <div class="image-placeholder" style="display: flex; gap: 8px;">
+                <img src="assets/pie-series-intro.png" alt="PIE Series Intro Slide" style="width: 49%; height: auto; border-radius: 8px;">
+                <img src="assets/pie-series-practice.png" alt="Interview Edge Cases Practice" style="width: 49%; height: auto; border-radius: 8px;">
+              </div>
+              <p><strong>Date:</strong> 15 May 2025</p>
+              <p><strong>Time:</strong> 4:00 pm - 5:30 pm (Adelaide Time)</p>
+              <p><strong>Venue:</strong> Helen Mayo South Building, SG20, Hone &amp; Sterling Teaching Room</p>
+              <p><strong>Summary:</strong> A practical workshop led by Shaun Gunawardane on anticipating and managing unexpected interview challenges—brain fog, disengaged interviewers, surprise salary questions, and miscommunications—through real-world examples and hands-on practice.</p>
+            </div>
+            
+            <!-- First cloned for wrap
+            <div class="activity-item glass-card active">
+              <h3>International Careers Development Program: S1 English Pronunciation and Fluency Workshop (Online)</h3>
+              <div class="image-placeholder">
+                <img src="assets/pronunciation-workshop..PNG" alt="Workshop Image" style="width: 100%; height: auto; border-radius: 8px;">
+              </div>
+              <p><strong>Date:</strong> 15 May 2025</p>
+              <p><strong>Time:</strong> 4:00 pm - 5:45 pm (Adelaide Time)</p>
+              <p><strong>Venue:</strong> Online (Zoom)</p>
+              <p><strong>Summary:</strong> Interactive session focusing on pronunciation, fluency, small talk strategies, and building confidence for English communication in professional settings.</p>
+            </div> -->
+          <button class="arrow next" onclick="scrollCarousel(1)">&#8250;</button>
+        </div>
+      </section>
+
+      <!-- Part 3: Post Reflection -->
+      <section id="post-reflection">
+        <h2>Post Reflection</h2>
+        <!-- Experience 1: Corresponding to Activity 1 -->
+        <div class="experience glass-card">
+          <h3>Experience 1: International Careers Development Workshop</h3>
+          <div class="star-model">
+            <p><strong>Situation:</strong> During early semester industry events, I felt my English pronunciation lacked clarity, hindering my ability to engage fully in networking sessions.</p>
+            <p><strong>Task:</strong> Enhance clear pronunciation and speaking confidence specifically for professional contexts.</p>
+            <p><strong>Action:</strong> Attended the S1 English Pronunciation and Fluency Workshop (Activity 1), actively practiced targeted phonemes, participated in instructor-led drills, and applied feedback during breakout role-plays.</p>
+            <p><strong>Result:</strong> Achieved more precise articulation of challenging sounds, experienced smoother speech flow, and received positive remarks from friends and seniors on my improved clarity during a mock interview.</p>
+            <p><strong>Lessons Learned / Plan:</strong> Realized the impact of focused, repetitive practice with expert guidance; I will continue weekly pronunciation exercises using Speech Active modules and seek peer feedback in future industry meetups.</p>
+          </div>
+        </div>
+        <!-- Experience 2: Corresponding to Activity 2 -->
+        <div class="experience glass-card">
+          <h3>Experience 2: AI for Public Good Webinar Participation</h3>
+          <div class="star-model">
+            <p><strong>Situation:</strong> As part of my professional development, I sought to understand real-world AI applications but had limited exposure to public sector implementations.</p>
+            <p><strong>Task:</strong> Gain insights into how AI is leveraged in government and public sectors to address societal challenges.</p>
+            <p><strong>Action:</strong> Attended the AI for Public Good Webinar (Activity 2) featuring speakers from UNSW, Microsoft, and Cognizant; actively listened to case studies, participated in polls, and posed questions during the Q&amp;A.</p>
+            <p><strong>Result:</strong> I developed a nuanced understanding of how AI-driven solutions can enhance citizen services and promote financial wellbeing. I will harness this insight to inform the development of more targeted healthcare analytics frameworks.</p>
+            <p><strong>Lessons Learned / Plan:</strong> Recognized the importance of domain-specific context when applying AI; I will further research ethical frameworks for public sector AI and present findings at the upcoming Data Science seminar series.</p>
+          </div>
+        </div>
+        <!-- Experience 3: Corresponding to Activity 3 -->
+        <div class="experience glass-card">
+          <h3>Experience 3: Resume and Cover Letter Proficiency</h3>
+          <div class="star-model">
+            <p><strong>Situation:</strong> As the application deadline for internships approached, I felt my existing resume and cover letter lacked clarity and failed to showcase my mathematical and technical strengths effectively.</p>
+            <p><strong>Task:</strong> Develop a professional, well-structured resume and cover letter that clearly articulate my skills, experiences, and suitability for data science roles.</p>
+            <p><strong>Action:</strong> Attended the Resume and Cover Letter Session (Activity 3), actively engaged in drafting my documents during guided exercises, asked targeted questions about formatting priorities, and sought peer feedback on content organization. I applied the session's recommended action verbs, quantified achievements, and incorporated a tailored opening paragraph in my cover letter.</p>
+            <p><strong>Result:</strong> I gained a deeper appreciation for how clarity and precision in document structure influence recruiters' perceptions, and I will use this insight to craft future materials that align more closely with industry expectations. This enhanced understanding will guide me in presenting my qualifications in a way that resonates with hiring panels.</p>
+            <p><strong>Lessons Learned / Plan:</strong> I learned the impact of specificity—quantifying results and customizing language to each role. Moving forward, I will maintain a living “master resume” file, update it monthly with new experiences, and schedule peer-review sessions before each application to ensure continued relevance and polish.</p>
+          </div>
+        </div>
+        <!-- Experience 4: Corresponding to Activity 4 -->
+        <div class="experience glass-card">
+          <h3>Experience 4: Networking Skills Application</h3>
+          <div class="star-model">
+            <p><strong>Situation:</strong> Early in the semester, I struggled to initiate conversations with professionals at industry events, limiting my ability to form meaningful connections.</p>
+            <p><strong>Task:</strong> Develop confidence and practical techniques for initiating and sustaining professional networking interactions.</p>
+            <p><strong>Action:</strong> Attended the S1 Networking Skills Workshop (Activity 4), actively participated in ice-breaker exercises, practiced introductions and small talk in breakout groups, and solicited feedback on my questioning style. After the session, I identified three alumni to contact, drafted personalized follow-up emails, and scheduled coffee chats.</p>
+            <p><strong>Result:</strong> I developed a nuanced understanding of how professional communication underpins strong industry relationships, and I will apply this insight to refine my networking approach and foster deeper connections in future engagements.</p>
+            <p><strong>Lessons Learned / Plan:</strong> Learned that tailoring questions to the professional's background fosters engagement; I will maintain a networking log to track contacts and set monthly goals for follow-ups, ensuring sustained relationship building.</p>
+          </div>
+        </div>
+        <!-- Experience 5: Corresponding to Activity 5 -->
+        <div class="experience glass-card">
+          <h3>Experience 5: Strengths Identification and Application</h3>
+          <div class="star-model">
+            <p><strong>Situation:</strong> I was unclear on which personal strengths set me apart and struggled to convey them convincingly in job applications and interviews.</p>
+            <p><strong>Task:</strong> Clearly identify my top strengths and learn how to articulate and market them effectively to potential employers.</p>
+            <p><strong>Action:</strong> Participated in the NESS “Value of Strengths” workshop (Activity 5): completed guided self-assessment exercises to list strengths, discussed results in small groups to gather peer insights, mapped each strength to real-world examples, and drafted concise “strength statements” for cover letters and interviews.</p>
+            <p><strong>Result:</strong> Understood five core strengths—analytical problem-solving, adaptability, teamwork, resilience, and empathy—each supported by concrete examples from academic and volunteer experiences. My friends and supervisor praised the clarity of my statements, and I subsequently integrated these into my application materials, leading to more engaging interview conversations.</p>
+            <p><strong>Lessons Learned / Plan:</strong> Realized that pairing each strength with a specific anecdote makes it memorable; I will maintain a “strengths portfolio” document, update it after every new project or experience, and rehearse delivering each strength-based narrative in upcoming mock interviews and networking events.</p>
+          </div>
+        </div>
+        <!-- Experience 6: Corresponding to Activity 6 -->
+        <div class="experience glass-card">
+          <h3>Experience 6: Exploring Water Industry Careers</h3>
+          <div class="star-model">
+            <p><strong>Situation:</strong> I was uncertain which roles existed in the water sector and how my data science skills could translate to that industry.</p>
+            <p><strong>Task:</strong> Gain firsthand insight into water-related career pathways and establish professional contacts within the sector.</p>
+            <p><strong>Action:</strong> Attended Ozwater'25 Tertiary Student Experience Day (Activity 6)—listened to panels from engineers, analysts, and project managers; participated in Q&amp;A sessions; took the guided exhibition tour; and initiated conversations with five exhibitors to learn about entry-level opportunities.</p>
+            <p><strong>Result:</strong> DI gained a clear insight into the spectrum of career paths in water data analysis and infrastructure modeling, and I will use this perspective to focus my future professional development on the roles that best suit my strengths. I also recognised the importance of strategic networking and will apply this understanding to build meaningful industry connections and access relevant resources moving forward.</p>
+            <p><strong>Lessons Learned / Plan:</strong> Realized the value of asking targeted questions to uncover hidden career paths; I will follow up with my new contacts within two weeks, research specific water-analytics projects, and prepare tailored applications for internship programs in the sector.</p>
+          </div>
+        </div>
+        <!-- Experience 7: Corresponding to Activity 7 -->
+        <div class="experience glass-card">
+          <h3>Experience 7: Canada Employment and Visa Insights</h3>
+          <div class="star-model">
+            <p><strong>Situation:</strong> I was exploring international career opportunities but had limited knowledge of Canada's work visa requirements and key employment sectors.</p>
+            <p><strong>Task:</strong> Obtain clear guidance on job market trends in Canada and understand eligibility criteria for relevant visa pathways.</p>
+            <p><strong>Action:</strong> Attended the Canada Information Session (Activity 7), actively listened to the Migration Program Manager's overview of in-demand fields, took detailed notes on visa categories (e.g., Express Entry, LMIA), asked targeted questions about processing times and documentation, and connected with the speaker afterward for follow-up contact.</p>
+            <p><strong>Result:</strong> I will develop a concise chart mapping Australian qualifications to Canadian visa streams and identified two priority sectors (ICT and healthcare) for my skills. I secured the Migration Manager's contact for further queries and drafted a visa application checklist.</p>
+            <p><strong>Lessons Learned / Plan:</strong> Recognized the importance of aligning skill sets with sector demand and early visa preparation; I will schedule a one-on-one consultation with the High Commission['s career advisor, refine my application documents for Express Entry, and begin gathering required certificates over the next month.</p>
+          </div>
+        </div>
+        <!-- Experience 8: Corresponding to Activity 8 -->
+        <div class="experience glass-card">
+          <h3>Experience 8: Effective Work Experience Acquisition</h3>
+          <div class="star-model">
+            <p><strong>Situation:</strong> Mid-semester, I recognised my CV lacked relevant industry experience, and I felt uncertain about practical steps to secure placements aligned with data science.</p>
+            <p><strong>Task:</strong> Learn actionable methods to identify and approach employers for work experience opportunities, including hidden openings.</p>
+            <p><strong>Action:</strong> Attended the Gaining Practical Experience workshop (Activity 8), took detailed notes on advertised vs. unadvertised channels, drafted and practiced a cold-call script with peers, and set up targeted searches on LinkedIn and company websites. Immediately after, I contacted three data analytics teams via email and LinkedIn InMail.</p>
+            <p><strong>Result:</strong> I received a positive reply: an informational interview with a data analytics manager. My confidence in proactive outreach increased significantly. I gained a clearer understanding of how timely, professional outreach cultivates meaningful industry engagement, and I will use this insight to shape more effective networking strategies in the future.</p>
+            <p><strong>Lessons Learned / Plan:</strong> Realised that personalized, concise initial contact yields higher response rates. I will maintain a tracking spreadsheet for all outreach, refine my cold-call script monthly, and aim to secure at least one new placement every term through systematic follow-up.</p>
+          </div>
+        </div>
+        <!-- Experience 9: Corresponding to Activity 9 -->
+        <div class="experience glass-card">
+          <h3>Experience 9: Deepening Cultural Understanding</h3>
+          <div class="star-model">
+            <p><strong>Situation:</strong> I recognised that my cultural competency regarding Australia's First Nations histories and perspectives was superficial, limiting my ability to engage respectfully in diverse professional settings.</p>
+            <p><strong>Task:</strong> Develop a more informed understanding of reconciliation principles and deepen respect for First Nations voices in my university community.</p>
+            <p><strong>Action:</strong> Attended the National Reconciliation Week event (Activity 9): listened attentively to Jack Buckskin's Welcome to Country and didgeridoo performance, participated in the yarning session on the South Australian Voice to Parliament, and engaged peers in reflective discussion. I also connected with CASM artists to learn more about Kaurna Song Book initiatives.</p>
+            <p><strong>Result:</strong> I acquired a nuanced understanding of Kaurna cultural practices and the significance of the “Bridging Now to Next” theme, and I will draw on this insight to inform and enrich my future contributions to Reconciliation Activities initiatives.</p>
+            <p><strong>Lessons Learned / Plan:</strong> Learned that active listening and storytelling deepen empathy; I will continue attending cultural events, volunteer with the Student Reconciliation Network, and incorporate First Nations perspectives into group projects and presentations to foster inclusive environments.</p>
+          </div>
+        </div>
+        <!-- Experience 10: Corresponding to Activity 10 -->
+        <div class="experience glass-card">
+          <h3>Experience 10: Mastering Interview Edge Cases</h3>
+          <div class="star-model">
+            <p><strong>Situation:</strong> During mock interviews, I found that unexpected questions and interviewer disengagement often left me flustered and unable to recover smoothly.</p>
+            <p><strong>Task:</strong> Build resilience and strategic responses to uncommon interview scenarios to maintain confidence and control throughout the conversation.</p>
+            <p><strong>Action:</strong> Attended the PIE Series session (Activity 10), where I observed Shaun’s frameworks for handling brain fog and tough questions, then role-played scenarios in pairs—practicing pausing techniques, redirecting off-topic prompts, and framing salary discussions with research-backed responses.</p>
+            <p><strong>Result:</strong> Noticed a marked improvement in my composure during subsequent mock interviews: I responded to difficult questions with structured answers, regained focus after pauses, and navigated salary topics assertively. Feedback from peers highlighted my calmer demeanor and clear articulation under pressure.</p>
+            <p><strong>Lessons Learned / Plan:</strong> Recognised the power of deliberate pauses and reframing techniques; I will integrate these into all future interview preparations, schedule bi-weekly mock sessions to rehearse new edge-case scenarios, and maintain a “challenge log” to track and refine my strategies continuously.</p>
+          </div>
+        </div>
+      </section>
+
+      <footer>&copy; 2025 Jindong Liu.</footer>
+    </div>
+  </div>
+  <script>
+    function scrollCarousel(direction) {
+      const carousel = document.getElementById('carousel');
+      const items = Array.from(carousel.querySelectorAll('.activity-item'));
+      let currentIndex = items.findIndex(item => item.classList.contains('active'));
+      items[currentIndex].classList.remove('active');
+      currentIndex = (currentIndex + direction + items.length) % items.length;
+      items[currentIndex].classList.add('active');
+      const target = items[currentIndex];
+      carousel.scrollTo({ left: target.offsetLeft - (carousel.clientWidth - target.clientWidth) / 2, behavior: 'smooth' });
+    }
+    document.addEventListener('DOMContentLoaded', () => scrollCarousel(0));
+  </script>
+</body>
+</html>
